@@ -35,17 +35,14 @@
       background: yellow;
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       font-size: 28px;
-      padding: 10px;
-     
+      padding: 10px;     
     }
 
     h1{
       background-color: black;
       color: white;
       text-align: center;
-
-
-    }
+   }
   </style>
 
 </head>
@@ -56,10 +53,6 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#">Lotofacil</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
     </div>
   </nav>
 
@@ -69,8 +62,6 @@
     <!-- Jumbotron Header -->
     <header>
       <div class="row" style="background-color: aquamarine;">       
-       
-     
         <div class="form-group">
           <label for="quantidade" class="tamanhoFonts">Qtd Jogos:</label>
           <input maxlength="4" type="text" class="form-control" id="quantidade" onkeypress="return somenteNumeros(event)" style="width:70px; margin-left: 20px;">
@@ -79,6 +70,7 @@
         <div class="form-group">
           <label for="numerosIgnorados" class="tamanhoFonts">Numeros Ignorados:</label>
           <input type="text" class="form-control" id="numerosIgnorados" style="width:150px; margin-left: 20px;">
+          <span style="margin-left: 20px;"><b>Ex: 1,2,4,6...</b></span>
         </div>
    
  
@@ -118,12 +110,9 @@
   <script>
        var lista = []; 
        var quantidade_de_jogos;
-       var listaNumeros = [];
-       var numeros_ignorados= [];
+       var numeros_ignorados;
 
-        //var numeros_ignorados = [];
-        //var quantidade_de_jogos = 8; // pode mudar a quantidade aqui
-        var jogos = [];
+       var jogos = [];
 
         function gerarNumero(existentes) {
             var novoNumero = parseInt(Math.random() * 25, 10) + 1;
@@ -138,32 +127,31 @@
             return chaves.indexOf(chave.join()) != -1;
         }
 
-       function ArrayStringForArrayInt(numeros_ignorados)
-       {
-            var array = [];
-            var str = [];
-            str = numeros_ignorados
-            var size = str.length;
+      //  function ArrayStringForArrayInt(numeros_ignorados)
+      //  {
+      //       var array = [];
+      //       var str = [];
+      //       str = numeros_ignorados
+      //       var size = str.length;
 
-            for(var i=0; i< size; i++)
-            {
-              array[i] = parseInt(str[i]);
-            }
+      //       for(var i=0; i< size; i++)
+      //       {
+      //         array[i] = parseInt(str[i]);
+      //       }
 
-           return array;
-           console.log(array)
-       }
+      //      return array;
+      //      console.log(array)
+      //  }
 
 
        function Gerador(){
 
         quantidade_de_jogos = $("#quantidade").val();
-        listaNumeros = ($("#numerosIgnorados").val());
-        numeros_ignorados = [listaNumeros];
+        numeros_ignorados = ($("#numerosIgnorados").val());
 
-        if(numeros_ignorados != "")        
-        numeros_ignorados = ArrayStringForArrayInt(numeros_ignorados)
-        console.log(numeros_ignorados);
+        // if(numeros_ignorados != "")        
+        // numeros_ignorados = ArrayStringForArrayInt(numeros_ignorados)
+        // console.log(numeros_ignorados);
 
         
         if(quantidade_de_jogos < 1 || quantidade_de_jogos == ""){
@@ -225,3 +213,4 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
