@@ -1,6 +1,6 @@
 # Projeto 
 
-Projeto HTML
+Projeto - Gerador de Jogos lotofacil
 
 ## Objetivo
 
